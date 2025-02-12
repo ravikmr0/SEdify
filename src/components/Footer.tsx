@@ -43,11 +43,27 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Youtube, href: "#", label: "YouTube" },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/sigmaedify",
+      label: "Facebook",
+    },
+    { icon: Twitter, href: "https://x.com/sigmaedify", label: "Twitter" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/company/sigmaedify",
+      label: "LinkedIn",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/sigmaedify",
+      label: "Instagram",
+    },
+    {
+      icon: Youtube,
+      href: "https://www.youtube.com/@sigmaedify",
+      label: "YouTube",
+    },
   ];
 
   return (
