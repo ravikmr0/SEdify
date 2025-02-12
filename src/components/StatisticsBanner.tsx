@@ -18,20 +18,20 @@ const StatisticsBanner = ({
   statistics = [
     {
       icon: <Users className="w-8 h-8 text-primary" />,
-      value: 50000,
-      label: "Active Students",
+      value: 100000,
+      label: "Successful Candidates",
       prefix: "+",
     },
     {
       icon: <BookOpen className="w-8 h-8 text-primary" />,
-      value: 1000,
-      label: "Courses Available",
+      value: 50,
+      label: "Exam Categories",
       prefix: "+",
     },
     {
       icon: <GraduationCap className="w-8 h-8 text-primary" />,
-      value: 200,
-      label: "Expert Instructors",
+      value: 500,
+      label: "Expert Faculty",
       prefix: "+",
     },
   ],

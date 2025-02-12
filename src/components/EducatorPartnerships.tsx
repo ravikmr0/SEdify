@@ -2,7 +2,18 @@ import React from "react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
-import { Brush, Layout, Users, BarChart, Award, Shield } from "lucide-react";
+import {
+  Brush,
+  Layout,
+  Users,
+  BarChart,
+  Award,
+  Shield,
+  GraduationCap,
+  Atom,
+  TreePine,
+  Building2,
+} from "lucide-react";
 
 const features = [
   {
@@ -40,19 +51,23 @@ const features = [
 const partners = [
   {
     name: "Harvard University",
-    logo: "https://images.unsplash.com/photo-1562774053-701939374585?w=128&h=128&fit=crop&q=80",
+    icon: <GraduationCap className="h-10 w-10" />,
+    color: "from-blue-500 to-blue-600",
   },
   {
     name: "MIT",
-    logo: "https://images.unsplash.com/photo-1576495199011-eb94736d05d6?w=128&h=128&fit=crop&q=80",
+    icon: <Atom className="h-10 w-10" />,
+    color: "from-red-500 to-red-600",
   },
   {
     name: "Stanford University",
-    logo: "https://images.unsplash.com/photo-1532649538693-f3a2ec1bf8bd?w=128&h=128&fit=crop&q=80",
+    icon: <TreePine className="h-10 w-10" />,
+    color: "from-green-500 to-green-600",
   },
   {
     name: "Oxford University",
-    logo: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=128&h=128&fit=crop&q=80",
+    icon: <Building2 className="h-10 w-10" />,
+    color: "from-amber-500 to-amber-600",
   },
 ];
 
@@ -102,14 +117,14 @@ const EducatorPartnerships = () => {
                 key={index}
                 className="flex flex-col items-center justify-center p-6 rounded-lg bg-card backdrop-blur-sm border border-border hover:border-primary/20 transition-all duration-300"
               >
-                <img
-                  src={partner.logo}
-                  alt={`${partner.name} logo`}
-                  className="h-16 w-16 object-cover rounded-lg grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <p className="mt-2 text-sm text-muted-foreground text-center">
-                  {partner.name}
-                </p>
+                <div
+                  className={`rounded-xl p-6 bg-gradient-to-br ${partner.color} flex flex-col items-center justify-center gap-3 text-white transform hover:scale-105 transition-all duration-300`}
+                >
+                  <div className="p-3 bg-white/10 rounded-lg backdrop-blur-sm">
+                    {partner.icon}
+                  </div>
+                  <p className="font-semibold text-center">{partner.name}</p>
+                </div>
               </div>
             ))}
           </div>

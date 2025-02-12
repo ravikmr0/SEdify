@@ -16,28 +16,28 @@ const Footer = () => {
     {
       title: "Company",
       links: [
-        { label: "About Us", href: "#" },
-        { label: "Careers", href: "#" },
-        { label: "Press", href: "#" },
-        { label: "Blog", href: "#" },
+        { label: "About Us", href: "/about" },
+        { label: "Careers", href: "/careers" },
+        { label: "Press", href: "/press" },
+        { label: "Blog", href: "/blog" },
       ],
     },
     {
       title: "Resources",
       links: [
-        { label: "Community", href: "#" },
-        { label: "Help Center", href: "#" },
-        { label: "Partners", href: "#" },
-        { label: "Guides", href: "#" },
+        { label: "Community", href: "/community" },
+        { label: "Help Center", href: "/help" },
+        { label: "Partners", href: "/partners" },
+        { label: "Guides", href: "/guides" },
       ],
     },
     {
       title: "Legal",
       links: [
-        { label: "Privacy Policy", href: "#" },
-        { label: "Terms of Service", href: "#" },
-        { label: "Cookie Policy", href: "#" },
-        { label: "GDPR", href: "#" },
+        { label: "Privacy Policy", href: "/privacy" },
+        { label: "Terms of Service", href: "/terms" },
+        { label: "Cookie Policy", href: "/cookies" },
+        { label: "GDPR", href: "/gdpr" },
       ],
     },
   ];
@@ -92,6 +92,10 @@ const Footer = () => {
                     <a
                       href={link.href}
                       className="text-slate-400 hover:text-white transition-colors"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = link.href;
+                      }}
                     >
                       {link.label}
                     </a>

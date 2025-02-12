@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import {
   BookOpen,
   GraduationCap,
-  Code,
-  Palette,
+  FileText,
+  Building2,
   Brain,
-  Rocket,
+  Trophy,
 } from "lucide-react";
 
 interface HeroSectionProps {
@@ -22,10 +22,10 @@ const HeroSection = ({
   const floatingIcons = [
     { icon: BookOpen, delay: 0 },
     { icon: GraduationCap, delay: 0.2 },
-    { icon: Code, delay: 0.4 },
-    { icon: Palette, delay: 0.6 },
+    { icon: FileText, delay: 0.4 },
+    { icon: Building2, delay: 0.6 },
     { icon: Brain, delay: 0.8 },
-    { icon: Rocket, delay: 1 },
+    { icon: Trophy, delay: 1 },
   ];
 
   return (
@@ -73,7 +73,7 @@ const HeroSection = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Learn, Grow, and Succeed
+          Your Gateway to Government Service
         </motion.h1>
 
         <motion.p
@@ -82,8 +82,9 @@ const HeroSection = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Unlock your potential with our comprehensive e-learning platform. Join
-          thousands of learners worldwide on their journey to success.
+          Expert-led preparation for UPSC, SSC, Railway & other competitive
+          exams. Join thousands of successful candidates in their journey to
+          excellence.
         </motion.p>
 
         <motion.div

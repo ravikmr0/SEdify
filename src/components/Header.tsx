@@ -51,8 +51,12 @@ const Header = () => {
                     <div className="grid gap-3 p-4 w-[400px]">
                       <div className="grid grid-cols-2 gap-3">
                         <a
-                          href="#"
+                          href="/courses"
                           className="group block space-y-1 rounded-md p-3 hover:bg-accent"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            window.location.href = "/courses";
+                          }}
                         >
                           <div className="font-medium">Popular Courses</div>
                           <div className="text-sm text-muted-foreground">
@@ -60,8 +64,12 @@ const Header = () => {
                           </div>
                         </a>
                         <a
-                          href="#"
+                          href="/courses?sort=new"
                           className="group block space-y-1 rounded-md p-3 hover:bg-accent"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            window.location.href = "/courses?sort=new";
+                          }}
                         >
                           <div className="font-medium">New Releases</div>
                           <div className="text-sm text-muted-foreground">
