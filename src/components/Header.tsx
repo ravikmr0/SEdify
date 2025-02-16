@@ -53,10 +53,6 @@ const Header = () => {
                         <a
                           href="/courses"
                           className="group block space-y-1 rounded-md p-3 hover:bg-accent"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            window.location.href = "/courses";
-                          }}
                         >
                           <div className="font-medium">Popular Courses</div>
                           <div className="text-sm text-muted-foreground">
@@ -66,10 +62,6 @@ const Header = () => {
                         <a
                           href="/courses?sort=new"
                           className="group block space-y-1 rounded-md p-3 hover:bg-accent"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            window.location.href = "/courses?sort=new";
-                          }}
                         >
                           <div className="font-medium">New Releases</div>
                           <div className="text-sm text-muted-foreground">

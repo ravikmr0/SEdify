@@ -56,6 +56,11 @@ function App() {
 
           {/* Courses Routes */}
           <Route path="/courses" element={<PopularCourses />} />
+          <Route path="/courses/:courseId" element={<PopularCourses />} />
+          <Route
+            path="/courses/category/:categoryId"
+            element={<PopularCourses />}
+          />
 
           {/* Resources Routes */}
           <Route path="/community" element={<Community />} />
