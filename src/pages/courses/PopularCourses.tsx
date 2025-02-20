@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 import CourseCard from "@/components/CourseCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -20,6 +21,31 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const PopularCourses = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const [sortedCourses, setSortedCourses] = React.useState(courses);
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+
+    // Parse URL parameters
+    const params = new URLSearchParams(location.search);
+    const sort = params.get("sort");
+
+    if (sort === "new") {
+      setSortedCourses(
+        [...courses].sort(
+          (a, b) =>
+            new Date(b.lastUpdated).getTime() -
+            new Date(a.lastUpdated).getTime(),
+        ),
+      );
+    } else {
+      setSortedCourses([...courses]);
+    }
+  }, [location.search]);
   const categories = [
     "All Courses",
     "Technology",
@@ -262,7 +288,7 @@ const PopularCourses = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {courses.map((course, index) => (
+            {sortedCourses.map((course, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}

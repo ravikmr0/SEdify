@@ -38,51 +38,42 @@ function App() {
         </div>
       }
     >
-      <>
-        {/* For the tempo routes */}
-        {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
+      {/* For the tempo routes */}
+      {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
 
-        <Routes>
-          {/* Home Route */}
-          <Route path="/" element={<Home />} />
+      <Routes>
+        {/* Home Route */}
+        <Route path="/" element={<Home />} />
 
-          {/* Company Routes */}
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/press" element={<Press />} />
+        {/* Company Routes */}
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/press" element={<Press />} />
 
-          {/* Blog Route */}
-          <Route path="/blog" element={<Blog />} />
+        {/* Blog Route */}
+        <Route path="/blog" element={<Blog />} />
 
-          {/* Courses Routes */}
-          <Route path="/courses" element={<PopularCourses />} />
-          <Route path="/courses/:courseId" element={<PopularCourses />} />
-          <Route
-            path="/courses/category/:categoryId"
-            element={<PopularCourses />}
-          />
+        {/* Courses Routes */}
+        <Route path="/courses" element={<PopularCourses />} />
 
-          {/* Resources Routes */}
-          <Route path="/community" element={<Community />} />
-          <Route path="/help" element={<HelpCenter />} />
-          <Route path="/partners" element={<Partners />} />
-          <Route path="/guides" element={<Guides />} />
+        {/* Resources Routes */}
+        <Route path="/community" element={<Community />} />
+        <Route path="/help" element={<HelpCenter />} />
+        <Route path="/partners" element={<Partners />} />
+        <Route path="/guides" element={<Guides />} />
 
-          {/* Legal Routes */}
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/terms" element={<TermsOfService />} />
-          <Route path="/cookies" element={<CookiePolicy />} />
-          <Route path="/gdpr" element={<GDPR />} />
+        {/* Legal Routes */}
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/cookies" element={<CookiePolicy />} />
+        <Route path="/gdpr" element={<GDPR />} />
 
-          {/* Tempo Routes */}
-          {import.meta.env.VITE_TEMPO === "true" && (
-            <Route path="/tempobook/*" />
-          )}
+        {/* Tempo Routes */}
+        {import.meta.env.VITE_TEMPO === "true" && <Route path="/tempobook/*" />}
 
-          {/* Catch all route - redirect to home */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </>
+        {/* Catch all route - redirect to home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </Suspense>
   );
 }
